@@ -18,11 +18,11 @@ import java.util.*;
             double SalesTax = 0.0;
             double TotalAmount = 0.0;
             for (Item item: items) {
-                TaxCalculator calc = new BaseTaxCalculator(item);
+                TaxCalculator calc = new ComputeBaseTax(item);
                 if (item.cat == Category.OTHER)
-                    calc = new SalesTaxCalculator(calc);
+                    calc = new ComputeSalesTax(calc);
                 if (item.isImported)
-                    calc = new ImportTaxCalculator(calc);
+                    calc = new ComputeImportTax(calc);
                 calc = new Rounder(calc);
                 double Tax = calc.calc();
                 SalesTax += Tax;

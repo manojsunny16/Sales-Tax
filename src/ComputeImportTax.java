@@ -1,8 +1,8 @@
-public class SalesTaxCalculator implements TaxCalculator {
+public class ComputeImportTax implements TaxCalculator {
 
     private TaxCalculator calculator;
 
-    public SalesTaxCalculator(TaxCalculator calculator) {
+    public ComputeImportTax(TaxCalculator calculator) {
         this.calculator = calculator;
     }
 
@@ -13,7 +13,6 @@ public class SalesTaxCalculator implements TaxCalculator {
 
     @Override
     public double calc() {
-        return calculator.calc() + getItem().basePrice * 0.1d;
+        return calculator.calc() + getItem().basePrice * 0.05d;
     }
-
 }

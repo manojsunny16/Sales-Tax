@@ -1,8 +1,8 @@
-public class BaseTaxCalculator implements TaxCalculator {
+public class ComputeBaseTax implements TaxCalculator {
 
     protected Item item;
 
-    public BaseTaxCalculator(Item item) {
+    public ComputeBaseTax(Item item) {
         this.item = item;
     }
 
